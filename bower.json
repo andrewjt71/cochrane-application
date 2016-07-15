@@ -1,0 +1,20 @@
+{
+  "name": "silex-implementation-base",
+  "description": "Base implementation of a Silex Application",
+  "main": "src/MyProject/script/index.js",
+  "authors": [
+    "Andrew Taylor <a.taylor280@gmial.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "semantic": "semantic-ui#^2.2.2"
+  }
+}

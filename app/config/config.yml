@@ -1,0 +1,5 @@
+monolog:
+    logfile: ../app/logs/log
+twig:
+    path:
+        - /src/Cochrane/views

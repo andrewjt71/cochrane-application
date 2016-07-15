@@ -1,0 +1,26 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+
+    <div class="ui inverted vertical masthead center aligned segment segment__full-page">
+        <div class="ui text container">
+            <h1 class="ui inverted header">
+                Cochrane
+            </h1>
+            <h2>Converting Cochrane export txt files to spreadsheets just got easier!</h2>
+            <div class="button__get-started ui huge primary button">Get Started <i class="right arrow icon"></i></div>
+        </div>
+
+    </div>
+
+    <div class="section__upload ui vertical center aligned segment segment__full-page">
+        <div class="ui text container">
+            <h1 class="ui inverted header">
+                Lets do this
+            </h1>
+            {% include 'upload.html.twig' %}
+        </div>
+
+    </div>
+
+{% endblock %}

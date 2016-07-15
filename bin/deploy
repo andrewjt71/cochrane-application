@@ -1,0 +1,5 @@
+./bin/composer.phar install
+npm install
+npm start
+export PATH=./node_modules/.bin:$PATH
+bower install

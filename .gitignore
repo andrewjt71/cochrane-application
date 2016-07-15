@@ -1,0 +1,6 @@
+/vendor/*
+/web/css/*
+/app/logs/*
+/node_modules/*
+/web/js/*
+/web/vendor/*
