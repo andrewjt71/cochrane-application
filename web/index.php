@@ -7,9 +7,9 @@ use Cochrane\Controller\FrontController;
 
 $app = new Application();
 
-$app['controller.front_controller'] = $app->share(function() use ($app) {
+$app['controller.front_controller'] = function() use ($app) {
     return new FrontController($app['twig']);
-});
+};
 
 $app->get('/', "controller.front_controller:indexAction");
 

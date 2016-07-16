@@ -3,16 +3,21 @@ var codes,
     lineDelimeter = '\r\n',
     colEnclosure = '"';
 
-function createCsvFromFile(file) {
+function createCsvFromFile(file, searchParameters, recordLimit) {
+    var recordObjects,
+        recordStrings,
+        csv = lineDelimeter;
+
     // Set codes to empty array;
     codes = [];
 
     // Array of record text blobs
-    var recordStrings = file.split(/Record #(?:\d)+ of (?:\d)+/);
+    recordStrings = file.split(/Record #(?:\d)+ of (?:\d)+/);
 
     // Array of key value object representation of records.
-    var recordObjects = transformRecordStringsToObjects(recordStrings);
-    var csv = lineDelimeter;
+    recordObjects = transformRecordStringsToObjects(recordStrings);
+
+    // Add column headers to csv
     csv += codes.join(colDelimeter);
     csv += lineDelimeter;
 
@@ -35,7 +40,7 @@ function createCsvFromFile(file) {
                 sanitizedValue = value.split( colEnclosure ).join( colEnclosure + colEnclosure );
             }
 
-            // Write record to csv.
+            // Write record values to csv.
             csv += colEnclosure + sanitizedValue + colEnclosure + colDelimeter;
         }
 
@@ -52,17 +57,18 @@ function transformRecordStringsToObjects(resultArray) {
     // Iterate over result blobs of text
     for (var i = 0; i<resultArray.length; i++) {
         var result = resultArray[i],
-            extractedRecord = {};
+            extractedRecord = {},
+            lines;
 
         if (result.trim() == '') {
             continue;
         }
 
         // Iterate over lines of text blob
-        var lines = result.split(/(?:\r|\n)+/);
+        lines = result.split(/(?:\r|\n)+/);
 
         for(var j = 0; j < lines.length; j++) {
-            var line = lines[j].
+            var line = lines[j],
                 detectedCode,
                 value;
 
