@@ -10,6 +10,15 @@ var uglify = require('gulp-uglify');
 gulp.task('javascript', function() {
     return gulp.src('src/Cochrane/script/index.js')
         .pipe(webpack({
+            module: {
+                loaders: [{
+                    loader: 'babel-loader',
+                    exclude: /node_modules/,
+                    query: {
+                        presets: ['es2015']
+                    }
+                }]
+            },
             output: {
                 filename: 'compiled.min.js',
             },

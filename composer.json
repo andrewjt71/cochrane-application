@@ -3,7 +3,7 @@
         "psr-0": { "": "src/" }
     },
     "require": {
-        "andrewjt71/silex-base": "^0.0.1",
+        "andrewjt71/silex-base": "^0.0.2",
         "leafo/lessphp": "~0.5"
     }
 }
