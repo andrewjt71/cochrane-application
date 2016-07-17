@@ -1,19 +1,12 @@
 class FileDropHandler {
-    constructor (cochraneAnalyser, csvWriter) {
+    constructor ($dropElement, cochraneAnalyser, csvWriter) {
         this._cochraneAnalyser = cochraneAnalyser;
         this._csvWriter = csvWriter;
+        this._$dropElement = $dropElement;
 
-        var $dragDropElement = $('.upload__drop-zone');
-
-        $dragDropElement.get(0).addEventListener('dragover', evt => this.handleDragOver(evt), false);
-        $dragDropElement.get(0).addEventListener('dragleave', evt => this.handleDragLeave(evt), false);
-        $dragDropElement.get(0).addEventListener('drop', evt => this.handleDrop(evt), false);
-
-        $('.button__get-started').on('click', function () {
-            $('html,body').animate({
-                scrollTop: $(".section__upload").offset().top
-            });
-        });
+        this._$dropElement.get(0).addEventListener('dragover', evt => this.handleDragOver(evt), false);
+        this._$dropElement.get(0).addEventListener('dragleave', evt => this.handleDragLeave(evt), false);
+        this._$dropElement.get(0).addEventListener('drop', evt => this.handleDrop(evt), false);
     }
 
     handleFileSelect(file) {
@@ -23,20 +16,26 @@ class FileDropHandler {
         reader = new FileReader();
 
         reader.onload = function (event) {
-            var csvData,
-                csvDownloadLink,
-                recordObjects,
+            var recordObjects,
                 csvData;
 
             this.updateUiDropped();
             this._cochraneAnalyser.analyse(event.target.result);
-            recordObjects = this._cochraneAnalyser.getRecordObjects();
-            csvData = this._csvWriter.createCsvFromRecordObjects(recordObjects, this._cochraneAnalyser.getCodes());
-            csvDownloadLink = this.createCsvDownloadLink(csvData);
-            csvDownloadLink.click();
+            this.downloadCsv();
         }.bind(this)
 
         reader.readAsText(file);
+    }
+
+    downloadCsv() {
+        var recordObjects,
+            csvData,
+            csvDownloadLink;
+
+        recordObjects = this._cochraneAnalyser.getRecordObjects();
+        csvData = this._csvWriter.createCsvFromRecordObjects(recordObjects, this._cochraneAnalyser.getCodes());
+        csvDownloadLink = this.createCsvDownloadLink(csvData);
+        csvDownloadLink.click();
     }
 
     createCsvDownloadLink(csvData) {
