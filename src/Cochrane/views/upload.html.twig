@@ -1,5 +1,36 @@
-<div class="upload__drop-zone">
-    <div class="upload__draggable">Please drop your file here</div>
-    <div class="upload__file-confirmation"></div>
+
+<div class="upload">
+    <h1 class="upload__title">
+        Please drop your file into the area below ...
+    </h1>
+    <div class="upload__drop-zone">
+        <div class="upload__drop-zone__message--drop">Please drop your file here</div>
+        <div class="upload__drop-zone__message--invalid hidden">You can't drop this type of file</div>
+        <div class="upload__drop-zone__message--valid hidden">Drop to convert</div>
+        <div class="upload__drop-zone__message--success hidden">Success!</div>
+        <div class="upload__file-confirmation hidden"></div>
+
+        <button class="upload__btn-export hidden ui blue button">EXPORT</button>
+        <div class="upload__modal ui modal">
+            <div class="header">
+                Export Settings
+            </div>
+
+            <div class="content">
+                <div class="field">
+                    <label>Regular Expression (see http://http://regexr.com/) Term</label>
+                    <input class = "search-terms" type="text" name="search-terms" placeholder="Search Terms">
+                </div>
+
+                Please select columns you wish this filter to apply to
+
+                <select multiple="" name="skills" class="column-select ui fluid normal dropdown">
+                </select>
+            </div>
+            <div class="actions">
+                <div class="btn-export ui button">EXPORT</div>
+            </div>
+        </div>
+    </div>
 </div>
 
