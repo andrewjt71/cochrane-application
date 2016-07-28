@@ -11,3 +11,6 @@ git clone git@bitbucket.org:andrewjt71/cochrane-application.git
 ```
 ./bin/deploy
 ```
+### Server Requirements ###
+* npm
+* php5
