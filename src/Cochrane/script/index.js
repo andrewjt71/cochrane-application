@@ -1,13 +1,14 @@
 var FileDropHandler = require('./file-drop-handler.js');
 var CochraneAnalyser = require('./cochrane-analyser.js');
 var CsvWriter = require('./csv-writer.js');
+var Progress = require('./progress.js');
 
 var cochraneAnalyser = new CochraneAnalyser();
 var csvWriter = new CsvWriter();
 
 $(document).ready(function() {
 
-    $('.upload__drop-zone').each(function() {
+    $('.upload').each(function() {
         var fileDropHandler = new FileDropHandler($(this), cochraneAnalyser, csvWriter);
     });
 

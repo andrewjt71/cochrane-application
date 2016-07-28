@@ -1,3 +1,11 @@
+.upload {
+    padding-top: 100px;
+}
+
+.upload__title {
+    font-family: Questrial;
+}
+
 .upload__drop-zone {
     outline: 2px dashed #92b0b3;
     outline-offset: -10px;
@@ -9,18 +17,18 @@
     padding: 100px 20px;
 }
 
-.upload__dropzone--success {
+.upload__drop-zone--invalid {
+    background-color: red;
+}
+
+.upload__drop-zone--valid {
+    background-color: orange;
+}
+
+.upload__drop-zone--dropped {
     background-color: #696;
 }
 
-.upload__dropzone--hover {
-    background-color: grey;
-}
-
-// .upload__draggable {
-//     display: none;
-// }
-
-.upload__dropzone--success .upload__draggable {
-    display: none;
+.hidden {
+    display: none !important;
 }
