@@ -1,21 +1,22 @@
-var FileDropHandler = require('./file-drop-handler.js');
-var CochraneAnalyser = require('./cochrane-analyser.js');
-var CsvWriter = require('./csv-writer.js');
-var Progress = require('./progress.js');
-
-var cochraneAnalyser = new CochraneAnalyser();
-var csvWriter = new CsvWriter();
+var FileDropHandler = require('./file-drop-handler.js'),
+    CochraneAnalyser = require('./cochrane-analyser.js'),
+    CsvWriter = require('./csv-writer.js'),
+    Progress = require('./progress.js'),
+    ScrollButton = require('./scroll-button.js'),
+    cochraneAnalyser = new CochraneAnalyser(),
+    csvWriter = new CsvWriter(),
+    MultiTermSelect = require('./multi-term-select.js');
 
 $(document).ready(function() {
-
     $('.upload').each(function() {
-        var fileDropHandler = new FileDropHandler($(this), cochraneAnalyser, csvWriter);
+        var multiTermSelector,
+            fileDropHandler;
+
+        multiTermSelector = new MultiTermSelect($(this).find('.multi-term-select'));
+        fileDropHandler = new FileDropHandler($(this), cochraneAnalyser, csvWriter, multiTermSelector);
     });
 
-    // @todo: Move this to a module.
-    $('.button__get-started').on('click', function () {
-        $('html,body').animate({
-            scrollTop: $(".section__upload").offset().top
-        });
+    $('.scroll-button').each(function() {
+        var scrollButton = new ScrollButton($(this));
     });
 });

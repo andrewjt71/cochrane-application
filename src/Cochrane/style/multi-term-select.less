@@ -1,0 +1,70 @@
+.multi-term-select__primary {
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    word-wrap: break-word;
+    line-height: 1em;
+    outline: 0;
+    background: #FFF;
+    padding: .22620476em 10px .22620476em .35714286em;
+    color: rgba(0,0,0,.87);
+    box-shadow: none;
+    border: 1px solid rgba(34,36,38,.15);
+    border-radius: .28571429rem;
+    min-height: 2.7142em;
+}
+
+.multi-term-select__primary--adder-displayed {
+    border-bottom: 1px dashed rgba(34,36,38,.15)
+}
+
+.multi-term-select__primary:hover:not(.multi-term-select__primary--adder-displayed) {
+    border: 1px solid darkgray;
+}
+
+.multi-term-select__term.ui.label {
+    display: inline-block;
+    vertical-align: baseline;
+    background-color: #E8E8E8;
+    color: rgba(0,0,0,.6);
+    text-transform: none;
+    font-weight: 700;
+    border-radius: .28571429rem;
+    -webkit-transition: background .1s ease;
+    transition: background .1s ease;
+    font-size: 1em;
+    padding: .35714286em .78571429em;
+    margin: .14285714rem .28571429rem .14285714rem 0;
+    box-shadow: 0 0 0 1px rgba(34,36,38,.15) inset;
+
+    .delete.icon {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+.multi-term-select__term:hover {
+    background-color: red;
+}
+
+.multi-term-select__add.icon {
+    line-height: initial;
+    font-size: 2em;
+    float: right;
+}
+
+.multi-term-select__adder {
+    width: 100%;
+    outline: 0;
+    cursor: pointer;
+    word-wrap: break-word;
+    line-height: 1em;
+    background: #FFF;
+    padding: .78571429em 2.1em .78571429em 1em;
+    color: rgba(0,0,0,.87);
+    border-top: none;
+    border-bottom: 1px solid rgba(34,36,38,.15);
+    border-left: 1px solid rgba(34,36,38,.15);
+    border-right: 1px solid rgba(34,36,38,.15);
+    border-radius: .28571429rem;
+}

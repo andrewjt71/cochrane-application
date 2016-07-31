@@ -1,11 +1,31 @@
+/**
+ * Class CsvWriter
+ *
+ * Creates a CSV given a list of column titles and array of object representation of records {col:value}
+ *
+ * Includes functionality to filter results based on a search regex which can be applied to selected columns.
+ */
 class CsvWriter {
 
+    /**
+     * Class constructior
+     */
     constructor() {
         this._colDelimeter = ',';
         this._lineDelimeter = '\r\n';
         this._colEnclosure = '"';
     }
 
+    /**
+     * Creates a CSV given a list of column titles and array of object representation of records {col:value}
+     *
+     * @param array recordObjects
+     * @param array codes
+     * @param string searchTerm
+     * @param array selectedColumns
+     *
+     * @return string
+     */
     createCsvFromRecordObjects(recordObjects, codes, searchTerm, selectedColumns) {
         var csv = this._lineDelimeter;
 

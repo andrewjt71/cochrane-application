@@ -1,17 +1,41 @@
+/**
+ * Class Cochrane Analyser
+ *
+ * Analyses cochrane text export to extract unique record properties and records
+ */
 class CochraneAnalyser {
     constructor() {
         this._codes = [];
         this._recordObjects;
     }
 
+    /**
+     * Returns codes detected by latest analysis.
+     *
+     * @return array
+     */
     getCodes() {
         return this._codes;
     }
 
+    /**
+     * Returns array or object representation of records detected by latest analysis.
+     *
+     * @return array
+     */
     getRecordObjects() {
         return this._recordObjects;
     }
 
+    /**
+     * Analyses a text file.
+     *
+     * Updates _codes and _recordObjects with findings
+     *
+     * @param string textFile
+     *
+     * @return void
+     */
     analyse(textFile) {
         var recordStrings;
 
