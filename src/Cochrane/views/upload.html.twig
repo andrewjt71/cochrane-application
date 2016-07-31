@@ -1,4 +1,3 @@
-
 <div class="upload">
     <h1 class="upload__title">
         Please drop your file into the area below ...
@@ -10,25 +9,20 @@
         <div class="upload__drop-zone__message--success hidden">Success!</div>
         <div class="upload__file-confirmation hidden"></div>
 
-        <button class="upload__btn-export hidden ui blue button">EXPORT</button>
+        <button class="upload__btn-prepare-export hidden ui blue button">EXPORT</button>
         <div class="upload__modal ui modal">
             <div class="header">
                 Export Settings
             </div>
 
             <div class="content">
-                <div class="field">
-                    <label>Regular Expression (see http://http://regexr.com/) Term</label>
-                    <input class = "search-terms" type="text" name="search-terms" placeholder="Search Terms">
-                </div>
-
+                {% include 'multi_term_select.html.twig' %}
                 Please select columns you wish this filter to apply to
-
                 <select multiple="" name="skills" class="column-select ui fluid normal dropdown">
                 </select>
             </div>
             <div class="actions">
-                <div class="btn-export ui button">EXPORT</div>
+                <div class="upload__btn-export ui button">EXPORT</div>
             </div>
         </div>
     </div>

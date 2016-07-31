@@ -1,3 +1,8 @@
+/**
+ * Class Progress
+ *
+ * Semantic UI Progress bar wrapper
+ */
 class Progress {
     constructor($progressElement) {
         this._$progressElement = $progressElement;
