@@ -13,4 +13,9 @@ $app['controller.front_controller'] = function() use ($app) {
 
 $app->get('/', "controller.front_controller:indexAction");
 
+$app->get('/about', "controller.front_controller:aboutAction");
+
+$app->get('/contact', "controller.front_controller:contactAction");
+
+
 $app->run();

@@ -18,4 +18,20 @@ class FrontController
             []
         );
     }
+
+    public function aboutAction()
+    {
+        return $this->twig->render(
+            'about.html.twig',
+            []
+        );
+    }
+
+    public function contactAction()
+    {
+        return $this->twig->render(
+            'contact.html.twig',
+            []
+        );
+    }
 }

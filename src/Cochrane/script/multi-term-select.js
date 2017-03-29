@@ -45,7 +45,13 @@ class MultiTermSelect {
      * @param string value
      */
     addValue(value) {
-        var $newItem = $("<a class='ui label transition visible multi-term-select__term' data-value='"+ value +"' style='display: inline-block !important;'>" + value + "<i class='multi-term-select__term__delete-icon delete icon'></i></a>");
+        var $newItem;
+
+        if (value == '') {
+            return;
+        }
+
+        $newItem = $("<a class='ui label transition visible multi-term-select__term' data-value='"+ value +"' style='display: inline-block !important;'>" + value + "<i class='multi-term-select__term__delete-icon delete icon'></i></a>");
 
         this._$multiTermSelectPrimary.append($newItem);
         $newItem.find('.delete.icon').on('click', function () {

@@ -4,6 +4,7 @@
     },
     "require": {
         "andrewjt71/silex-base": "^0.0.2",
-        "leafo/lessphp": "~0.5"
+        "leafo/lessphp": "~0.5",
+        "symfony/security": "^3.1"
     }
 }
